@@ -1,10 +1,10 @@
 import { CreateUserController } from './CreateUserController';
 import { CreateUserUseCase } from './CreateUserUseCase';
-import { PostgresUserRepository } from './../../repositories/implementations/PostegresUserRepository';
+import { MysqlUserRepository } from '../../repositories/implementations/MysqlUserRepository';
 import { MailTrapMailProvider } from './../../providers/implementations/MailTrapMailProvider';
 
 const mailTrapProvider = new MailTrapMailProvider()
-const postgresUserRepository = new PostgresUserRepository()
+const postgresUserRepository = new MysqlUserRepository()
 const createUserUseCase = new CreateUserUseCase(
     postgresUserRepository,
     mailTrapProvider,
